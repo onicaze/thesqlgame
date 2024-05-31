@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <link rel="stylesheet" href="css/tutorial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music/tutorial.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
+    </script>
+
+    <div id="typing-container">
+        <div id="typing-text"></div>
+    </div>
+    <div>
+        <button onclick="startLoading1()" class="play-button">> skip</button>
+            <script>
+            function startLoading1() {
+                window.location.href = "ddl.html";
+            }
+            </script>
+    </div>
+    <script src="js/mysql.js"></script>
+</body>
+</html>

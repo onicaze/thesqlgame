@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The SQL Game</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <script src="js/fullscreen.js" defer></script>
+</head>
+<body style="background-color:black;text-transform:lowercase">
+    
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music/index.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
+    </script>
+
+    <div class="loading-screen">
+        <div id="typing-text" class="typing-text"></div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">* The SQL Game</h1> 
+
+        <button onclick="startLoading()" class="play-button">> tutorial</button>
+        <script>
+            function startLoading() {
+                window.location.href = "loading2.html";a
+            }
+            </script>
+        <br>
+        <button onclick="startLoading1()" class="play-button">> play</button>
+        <script>
+            function startLoading1() {
+                window.location.href = "loading4.html";
+            }
+            </script>
+        <br>
+        <button onclick="startLoading3()" class="play-button">> credits</button>
+        <script>
+            function startLoading3() {
+                window.location.href = "credit.php";
+            }
+            </script>
+
+        <div class="eyes" onclick="startLoading2()"></div>
+        <script>
+            function startLoading2() {
+                window.location.href = "loading1.html";
+            }
+            </script>
+   
+        
+</body>
+</html>

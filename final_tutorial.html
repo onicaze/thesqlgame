@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-transform: lowercase;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            padding-top: 100px;
+        }
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .goto-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: black;
+            color: #00ff00;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="music/tutorial.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
+    </script>
+
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="image/tutorial.png" alt="Image 1">
+        <img src="image/tutorial.png" alt="Image 2">
+        <img src="image/tutorial.png" alt="Image 3">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<button class="goto-button" onclick="gotoPage()"> click this when done</button>
+
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.carousel-images img');
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    function gotoPage() {
+        window.location.href = "loading4.html";
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (event.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+</script>
+
+</body>
+</html>

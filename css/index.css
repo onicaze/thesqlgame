@@ -1,0 +1,91 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.title{
+    font-family: "Fira Code", monospace;
+    text-align: center;
+    color: #00FF00;
+    font-size: 40px;
+}
+
+.guy{
+    color: #00FF00;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.eyes {
+    margin-top: 130px;
+    height: 30px;
+    aspect-ratio: 2;
+    display: grid;
+    background:
+      radial-gradient(farthest-side,#FF204E 15%,#0000 18%)0 0/50% 100%,
+      radial-gradient(50% 100% at 50% 160%,#1E1E1E 95%,#0000) 0 0   /50% 50%,
+      radial-gradient(50% 100% at 50% -60%,#1E1E1E 95%,#0000) 0 100%/50% 50%;
+    background-repeat: repeat-x;
+    animation: l2 1.5s infinite linear;
+  }
+  @keyframes l2 {
+    0%,
+    15% {background-position:0   0,0 0,0 100%}
+    20%,
+    40% {background-position:5px 0,0 0,0 100%}
+    45%,
+    55% {background-position:0   0,0 0,0 100%}
+    60%,
+    80%{background-position:-5px 0,0 0,0 100%}
+    85%,
+    100% {background-position:0   0,0 0,0 100%}
+  }
+
+/* styles.css */
+
+.play-button {
+    background-color: black;
+    font-family: "Fira Code", monospace;
+    border: none;
+    color: #00FF00;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Initial opacity */
+  transition: opacity 1s ease; /* Animation transition */
+  z-index: 999; /* Ensure loading screen is on top */
+  font-family: "Fira Code", monospace;
+  color: #00FF00;
+  font-size: 24px;
+  font-family: "Fira Code", monospace;
+}
+
+.fade-out {
+  opacity: 0;
+}
+

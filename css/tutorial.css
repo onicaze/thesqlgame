@@ -1,0 +1,32 @@
+#typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#typing-text {
+    font-size: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+body{
+    background-color: black;
+    color: #FF5F00;
+    font-family: "Fira Code", monospace;
+    overflow: hidden;
+}
+
+.play-button {
+    background-color: black;
+    font-family: "Fira Code", monospace;
+    border: none;
+    color: #00FF00;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}

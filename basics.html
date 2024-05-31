@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/quiz.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+<title>Quiz</title>
+</head>
+<body>
+
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="music/quiz.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
+</script>
+
+<div class="container">
+    <h1>Quiz</h1>
+    <div id="question"></div>
+    <div id="answerContainer">
+        <div id="hintHeader"></div>
+        <input type="text" id="answer" placeholder="Your answer">
+    </div>
+    <button id="submit-btn" onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+</div>
+
+<script>
+// Define questions, answers, and hints
+const quizData = [
+  { question: "Create a new database called 'tutorial'", answer: "CREATE DATABASE tutorial;", hint: "Command starts with 'CREATE'" },
+  { question: "Use the 'tutorial' database", answer: "USE tutorial;", hint: "Command starts with 'USE'" },
+  { question: "Create a new table called 'books' that consist of bookid, title, penulis, publisher with all datatype being varchar(255).", answer: "CREATE TABLE books(bookid varchar(255), title varchar(255), penulis varchar(255), publisher varchar(255));", hint: "Command starts with 'CREATE TABLE table_name(column1 datatype, column2 datatype,...);'" },
+  { question: "See the table structure in 'books'", answer: "DESCRIBE books;", hint: "Command starts with 'DESCRIBE'" },
+  { question: "Show all databases you have on your PC", answer: "SHOW DATABASES;", hint: "Command starts with 'SHOW'" }
+];
+
+let currentQuestion = 0;
+
+// Function to display current question
+function displayQuestion() {
+  const currentQuiz = quizData[currentQuestion];
+  document.getElementById("question").innerHTML = currentQuiz.question;
+  document.getElementById("hintHeader").innerText = "Hint: " + currentQuiz.hint;
+}
+
+// Function to check the answer
+function checkAnswer() {
+  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+  const correctAnswer = quizData[currentQuestion].answer.toLowerCase();
+  if (userAnswer === correctAnswer) {
+    document.getElementById("result").innerHTML = "Correct!";
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+      displayQuestion();
+      document.getElementById("answer").value = "";
+    } else {
+      // Redirect to another page after completing the quiz
+      window.location.href = "mysql.html";
+    }
+  } else {
+    document.getElementById("result").innerHTML = "Incorrect. The correct answer is: " + quizData[currentQuestion].answer;
+  }
+}
+
+// Initialize
+displayQuestion();
+
+// Submit answer when Enter key is pressed
+document.getElementById("answer").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    checkAnswer();
+  }
+});
+</script>
+
+</body>
+</html>

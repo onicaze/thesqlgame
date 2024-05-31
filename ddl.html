@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/quiz.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+<title>Quiz</title>
+</head>
+<body>
+
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="music/quiz.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
+</script>
+
+<div class="container">
+    <h1>Quiz</h1>
+    <div id="question"></div>
+    <div id="answerContainer">
+        <div id="hintHeader"></div>
+        <input type="text" id="answer" placeholder="Your answer">
+    </div>
+    <button id="submit-btn" onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+</div>
+
+<script>
+// Define questions, answers, and hints
+const quizData = [
+  { question: "Add a column with a PRIMARY KEY called 'bookid' with datatype varchar(255)", answer: "ALTER TABLE books MODIFY COLUMN bookid varchar(255), ADD PRIMARY KEY(bookid);",hint: "command starts with 'ALTER TABLE table_name MODIFY COLUMN'" },
+  { question: "Add a column called 'cheatcode' inside the table 'books' with int as datatype", answer: "ALTER TABLE books ADD cheatcode int;",hint: "command starts with 'ALTER TABLE table_name ADD'" },
+  { question: "Hey! No cheating! Remove the column 'cheatcode' inside the table 'books'", answer: "ALTER TABLE Books DROP COLUMN CheatCode;" ,hint: "command starts with 'ALTER TABLE table_name DROP COLUMN'"},
+  { question: "You dont understand what the meaning of 'penulis' inside the table 'books' rename it to 'writer'", answer: "ALTER TABLE Books RENAME COLUMN Penulis to Writer;",hint: "command starts with 'ALTER TABLE table_name RENAME COLUMN'" },
+  { question: "Remove the table called 'books'", answer: "DROP TABLE Books;",hint: "command starts with 'DROP'"},
+  { question: "Remove the database called 'tutorial'", answer: "DROP DATABASE Tutorial;",hint: "command starts with 'DROP'"}
+];
+
+let currentQuestion = 0;
+
+// Function to display current question
+function displayQuestion() {
+  const currentQuiz = quizData[currentQuestion];
+  document.getElementById("question").innerHTML = currentQuiz.question;
+  document.getElementById("hintHeader").innerText = "Hint: " + currentQuiz.hint;
+}
+
+// Function to check the answer
+function checkAnswer() {
+  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+  const correctAnswer = quizData[currentQuestion].answer.toLowerCase();
+  if (userAnswer === correctAnswer) {
+    document.getElementById("result").innerHTML = "Correct!";
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+      displayQuestion();
+      document.getElementById("answer").value = "";
+    } else {
+      // Redirect to another page after completing the quiz
+      window.location.href = "mysql2.html";
+    }
+  } else {
+    document.getElementById("result").innerHTML = "Incorrect. The correct answer is: " + quizData[currentQuestion].answer;
+  }
+}
+
+// Initialize
+displayQuestion();
+
+// Submit answer when Enter key is pressed
+document.getElementById("answer").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    checkAnswer();
+  }
+});
+</script>
+
+</body>
+</html>

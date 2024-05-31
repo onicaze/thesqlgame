@@ -1,0 +1,41 @@
+body{
+    background-color: black;
+    color: #00ff00;
+    font-family: "Fira Code", monospace;
+    overflow: auto;
+}
+
+a:visited{
+    color: #00ff006d;
+    text-decoration: none;
+}
+
+a:link{
+    color: #00ff009e;
+    text-decoration: none;
+}
+
+body{
+    overflow: auto;
+}
+    /* Custom scrollbar styles */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #030303;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #00FF00;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#lines {
+    font-weight:bold;
+    color: #F8BB41;
+}

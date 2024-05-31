@@ -1,0 +1,46 @@
+body{
+    overflow: hidden;
+    font-family: "Fira Code", monospace;
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Fira Code',monospace;
+    text-transform: lowercase;
+}
+
+#question {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#answer {
+    width: 1000px;
+    padding: 10px;
+    background-color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px dashed #00ff00;
+    border-radius: 5px;
+    color: #00ff00;
+}
+
+#submit-btn {
+    display: block;
+    padding: 10px;
+    background-color: black;
+    color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: black;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
