@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
 <title>Quiz</title>
+<script src='js/disablerightclick.js'></script>
 </head>
 <body>
 
@@ -22,6 +23,7 @@
 <div class="container">
     <h1>Quiz</h1>
     <div id="question"></div>
+    <p>end the commands with ";", for example: Create Database test;</p>
     <div id="answerContainer">
         <div id="hintHeader"></div>
         <input type="text" id="answer" placeholder="Your answer">
@@ -33,7 +35,7 @@
 <script>
 // Define questions, answers, and hints
 const quizData = [
-  { question: "Add a column with a PRIMARY KEY called 'bookid' with datatype varchar(255)", answer: "ALTER TABLE books MODIFY COLUMN bookid varchar(255), ADD PRIMARY KEY(bookid);",hint: "command starts with 'ALTER TABLE table_name MODIFY COLUMN'" },
+  { question: "Modify a column with a PRIMARY KEY called 'bookid' with datatype varchar(255)", answer: "ALTER TABLE books MODIFY COLUMN bookid varchar(255), ADD PRIMARY KEY(bookid);",hint: "command starts with 'ALTER TABLE table_name MODIFY COLUMN'" },
   { question: "Add a column called 'cheatcode' inside the table 'books' with int as datatype", answer: "ALTER TABLE books ADD cheatcode int;",hint: "command starts with 'ALTER TABLE table_name ADD'" },
   { question: "Hey! No cheating! Remove the column 'cheatcode' inside the table 'books'", answer: "ALTER TABLE Books DROP COLUMN CheatCode;" ,hint: "command starts with 'ALTER TABLE table_name DROP COLUMN'"},
   { question: "You dont understand what the meaning of 'penulis' inside the table 'books' rename it to 'writer'", answer: "ALTER TABLE Books RENAME COLUMN Penulis to Writer;",hint: "command starts with 'ALTER TABLE table_name RENAME COLUMN'" },

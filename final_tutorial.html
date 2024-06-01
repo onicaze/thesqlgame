@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
+    <title>Tutorial</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,46 +13,70 @@
             background-color: black;
             padding-top: 100px;
         }
-        .carousel {
-            position: relative;
-            max-width: 1000px;
-            margin: auto;
-            overflow: hidden;
-        }
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel img {
+        .carousel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+        .carousel-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .carousel-container img {
+            max-width: 70%;
+            max-height: 80vh;
+            margin-bottom: 20px;
+        }
+        .nav-button {
+            background-color: #40A578;
             border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
-        }
-        .goto-button {
-            display: block;
-            margin: 20px auto;
             padding: 10px 20px;
-            background-color: black;
-            color: #00ff00;
-            border: none;
+            font-size: 20px;
             cursor: pointer;
+            color: black;
+        }
+        .ok-button {
+            background-color: #40A578;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: black;
+            font-family: 'Fira Code', monospace;
+        }
+        .nav-button:hover,
+        .ok-button:hover {
+            background-color: #35805e;
+        }
+        .nav-button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        .description {
+            color: #00ff00;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            width: 70%;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
     </style>
+    <script src='js/disablerightclick.js'></script>
 </head>
 <body>
 
@@ -63,58 +87,62 @@
     <script>
         document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
     </script>
-
-<div class="carousel">
-    <div class="carousel-images">
-        <img src="image/tutorial.png" alt="Image 1">
-        <img src="image/tutorial.png" alt="Image 2">
-        <img src="image/tutorial.png" alt="Image 3">
+    
+    <div id="carouselOverlay" class="carousel-overlay">
+        <div class="carousel-container">
+            <img id="carouselImage" src="image/logging.png" alt="Carousel Image">
+            <div id="carouselDescription" class="description">Description for logging.png</div>
+            <div class="button-container">
+                <button id="prevButton" class="nav-button">←</button>
+                <button id="nextButton" class="nav-button">→</button>
+                <button id="okButton" class="ok-button">ok</button>
+            </div>
+        </div>
     </div>
-    <button class="prev" onclick="prevSlide()">&#10094;</button>
-    <button class="next" onclick="nextSlide()">&#10095;</button>
-</div>
 
-<button class="goto-button" onclick="gotoPage()"> click this when done</button>
+    <script>
+        const images = ['image/logging.png','image/backup_export.webp','image/import.png']; // Add your image paths here
+        const descriptions = [
+            'entering MariaDB in COMMAND PROMT',
+            'BACKUP/EXPORT your database',
+            'IMPORTING your desired database into MariaDB'
+        ]; // Add your text descriptions here
+        let currentIndex = 0;
 
-<script>
-    let currentIndex = 0;
+        const carouselOverlay = document.getElementById('carouselOverlay');
+        const carouselImage = document.getElementById('carouselImage');
+        const carouselDescription = document.getElementById('carouselDescription');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const okButton = document.getElementById('okButton');
 
-    function showSlide(index) {
-        const slides = document.querySelectorAll('.carousel-images img');
-        if (index >= slides.length) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = slides.length - 1;
-        } else {
-            currentIndex = index;
+        function updateCarousel() {
+            carouselImage.src = images[currentIndex];
+            carouselDescription.textContent = descriptions[currentIndex];
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === images.length - 1;
         }
-        const offset = -currentIndex * 100;
-        document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
-    }
 
-    function nextSlide() {
-        showSlide(currentIndex + 1);
-    }
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
 
-    function prevSlide() {
-        showSlide(currentIndex - 1);
-    }
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
 
-    function gotoPage() {
-        window.location.href = "loading4.html";
-    }
+        okButton.addEventListener('click', () => {
+            window.location.href = "loading4.html";
+        });
 
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (event.key === 'ArrowRight') {
-            nextSlide();
-        }
-    });
-
-    // Initialize the first slide
-    showSlide(currentIndex);
-</script>
-
+        // Initial update
+        updateCarousel();
+    </script>
 </body>
 </html>

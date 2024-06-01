@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dml.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <title>DML Tutorial</title>
+    <style>
+        body {
+            overflow: auto;
+        }
+        /* Custom scrollbar styles */
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #F0AD29;
+        }
+        body::-webkit-scrollbar-thumb:hover {
+            background: #F9C660;
+        }
+    </style>
+</head>
+<body>
+    <h1>DML</h1>
+    <div class="header">
+        <a href='?m=select'>Select</a>
+        <a href='?m=insert'>Insert</a>
+        <a href='?m=edit'>Edit</a>
+        <a href='?m=delete'>Delete</a>
+        <a href='?m=operator'>Operator</a>
+        <a href='?m=like'>Like</a>
+        <a href='?m=agregator'>Agregator</a>
+        <a href='?m=combination'>Combination</a>
+    </div>
+    <h1 id="title"></h1>
+    <div id="content"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('m') || 'onload';
+            let title = '';
+            let pageUrl = '';
+
+            switch(page) {
+                case 'select':
+                    title = 'Select';
+                    pageUrl = 'dml_select.html';
+                    break;
+                case 'insert':
+                    title = 'Insert';
+                    pageUrl = 'dml_insert.html';
+                    break;
+                case 'edit':
+                    title = 'Edit';
+                    pageUrl = 'dml_edit.html';
+                    break;
+                case 'delete':
+                    title = 'Delete';
+                    pageUrl = 'dml_delete.html';
+                    break;
+                case 'like':
+                    title = 'Like As';
+                    pageUrl = 'dml_like.html';
+                    break;
+                case 'agregator':
+                    title = 'Agregator';
+                    pageUrl = 'dml_agregator.html';
+                    break;
+                case 'operator':
+                    title = 'Operator';
+                    pageUrl = 'dml_operator.html';
+                    break;
+                case 'combination':
+                    title = 'Combining Operators';
+                    pageUrl = 'dml_combination.html';
+                    break;
+                default:
+                    title = 'Select';
+                    pageUrl = 'dml_select.html';
+                    break;
+            }
+
+            document.getElementById('title').innerText = title;
+            
+            fetch(pageUrl)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = '<p>Error loading page.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

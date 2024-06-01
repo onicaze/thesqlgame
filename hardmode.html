@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/hardmode.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <title>Hardmode</title>
+    <script src='js/disablerightclick.js'></script>
+</head>
+<body>
+
+<audio id="backgroundMusic" autoplay loop>
+    <source src="music/hmboss.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container1">
+    <div class="main-left">
+        <div class="main-topleft"><img src="image/hm_boss.png" alt="Image">
+        <div id="correctHpDisplay">boss HP: 10</div>
+    </div>
+        <div class="main-downleft">
+            <form id="mathForm" onsubmit="checkAnswer(event)">
+                <input type="text" id="answer" name="answer" placeholder="type your answer..." autofocus>
+            </form>
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="main-topright">
+            <label for="answer"><div class="question">select all data from the companies table</div></label>
+        </div>
+        <div class="main-middleright">
+            Companies
+            <table id="companiesTable">
+                <tr>
+                    <th>id</th>
+                    <th>company</th>
+                    <th>contact</th>
+                    <th>country</th>
+                    <th>address</th>
+                </tr>
+                <!-- Companies data will be inserted here by JavaScript -->
+            </table>   
+            Workers
+            <table id="workersTable">
+                <tr>
+                    <th>CompanyID</th>
+                    <th>WorkerID</th>
+                    <th>Name</th>
+                    <th>Job</th>
+                    <th>Region</th>
+                </tr>
+                <!-- Workers data will be inserted here by JavaScript -->
+            </table>   
+        </div>
+        <div class="main-downright">
+            <div class="main-downright-left">
+                <div id="hpDisplay">HP: 1</div>
+            </div>
+            <div class="main-downright-right">
+                no dml commands list lol
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const companies = [
+        { "Company": "PT. Indah Jaya", "Contact": "09894866372", "Country": "Japan", "Address": "Jln. Tarumanegara no.15" },
+        { "Company": "PT. Freehouse", "Contact": "8775967462", "Country": "Hungary", "Address": "Jln. Cibadak no. 50" },
+        { "Company": "PT. Rawaintan", "Contact": "9189766546", "Country": "Indonesia", "Address": "Jln. Bandung no. 39" },
+        { "Company": "PT. Hitamputih", "Contact": "0987685645", "Country": "Indonesia", "Address": "Jln. Setiabudi no. 177" },
+        { "Company": "PT. Kualaputur", "Contact": "3238777162", "Country": "UK", "Address": "Alterna Boulevard Kavling 18" }
+    ];
+
+    const workers = [
+        { "Name": "Philly Aisnt", "Job": "Accountant", "Region": "Margaasih" },
+        { "Name": "Olatunji Oluja Ojayjay", "Job": "Chief Economist", "Region": "Mpumalanga" },
+        { "Name": "Michael Treezy", "Job": "Business Analyst", "Region": "Ositania" },
+        { "Name": "Lucien Loft Gaylutherking", "Job": "Founder CEO", "Region": "Guadeloupe" },
+        { "Name": "Niko Poppy Zyatazyja", "Job": "Business Manager", "Region": "Badajoz" }
+    ];
+
+    function populateTables() {
+        const companiesTable = document.getElementById('companiesTable');
+        companies.forEach((company, index) => {
+            const row = companiesTable.insertRow();
+            row.insertCell(0).innerText = index + 1;
+            row.insertCell(1).innerText = company.Company;
+            row.insertCell(2).innerText = company.Contact;
+            row.insertCell(3).innerText = company.Country;
+            row.insertCell(4).innerText = company.Address;
+        });
+
+        const workersTable = document.getElementById('workersTable');
+        workers.forEach((worker, index) => {
+            const row = workersTable.insertRow();
+            row.insertCell(0).innerText = index + 1;
+            row.insertCell(1).innerText = index + 10; // Assuming WorkerID is a combination of index + 10
+            row.insertCell(2).innerText = worker.Name;
+            row.insertCell(3).innerText = worker.Job;
+            row.insertCell(4).innerText = worker.Region;
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', populateTables);
+</script>
+
+<script src="js/hardmode.js"></script>
+</body>
+</html>

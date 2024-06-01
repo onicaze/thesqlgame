@@ -24,7 +24,7 @@ function typeWords(words, index = 0) {
     } else {
         // Redirect to another page after the typing animation is done
         setTimeout(() => {
-            window.location.href = 'hardmode.php'; // Change 'another-page.html' to the desired URL
+            window.location.href = 'hardmode.html'; // Change 'another-page.html' to the desired URL
         }, 1000); // Adjust the delay before redirection if needed
     }
 }

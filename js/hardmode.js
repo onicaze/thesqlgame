@@ -2,16 +2,7 @@ document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 
 
 // Define your questions array
 const questions = [
-    { question: 'show all data in companies table', answer: ['select * from companies;'] },
-    { question: 'show all data in workers table', answer: ['select * from workers;'] },
-    { question: 'show company, contact, and address from companies table', answer: ['SELECT company, contact, address FROM companies;','SELECT company, address, contact FROM companies;','SELECT contact,company,address FROM companies;','SELECT contact, address, company FROM companies;','SELECT address, company, contact FROM companies;','SELECT address, contact, company FROM companies;'] },
-    { question: 'show all data in companies table from japan', answer: ["select * from companies WHERE country='japan';",'select * from companies where country="japan";'] },
-    { question: 'show all data in companies table from indonesia with id = 3', answer: ['select * from companies where country="indonesia" and id=3;',"select * from companies where country='indonesia' and id=3;"] },
-    { question: 'show all data in companies table from hungary or uk', answer: ["SELECT * FROM companies WHERE country = 'hungary' OR country = 'uk';",'SELECT * FROM companies WHERE country = "hungary" OR country = "uk";','SELECT * FROM companies WHERE country = "uk" OR country = "hungary";',"SELECT * FROM companies WHERE country = 'uk' OR country = 'hungary';"] },
-    { question: 'show all data in workers table, sort it by name in descending', answer: ['SELECT * FROM workers ORDER BY name DESC;'] },
-    { question: 'show a worker with the highest workerid in workers table', answer: ['SELECT MAX(workerid) FROM workers;'] },
-    { question: 'show all data in companies table with address containing the word "bandung"', answer: ["SELECT * FROM companies WHERE address LIKE '%bandung%';",'SELECT * FROM companies WHERE address LIKE "%bandung%";'] },
-    { question: 'show all data in companies table with address starting with "a"', answer: ["SELECT * FROM companies WHERE address LIKE 'a%';",'SELECT * FROM companies WHERE address LIKE "a%";'] },
+    { question: 'work in progress', answer: ['balls'] },
 ];
 
 // Maintain the current question index and HP
