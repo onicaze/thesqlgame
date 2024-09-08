@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabase</title>
+    <link rel="icon" href="images/logo/alphabase-icon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="avsurvey.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button-icons.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-12">
+        <nav class="navbar navbar-light navbar-expand-md navbar_main" style="position: fixed;width: 100%;font-family:Inter;z-index:1000;max-height: 6rem;">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><image height='30' src='images/alphabase-black-wide_small.png'></image></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link navbar_link_items" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link navbar_link_items navbar_link_items_active" href="library.html">Library</a></li>
+            </ul><a href="profile.html"><button class="btn btn-primary navbar_priority" type="button"><img src="images/alya.png" width="40" class="pfp"></button></a>
+        </div>
+        </div> 
+        </div>
+        </nav>
+    </div>
+    <div id="survey_display" style="font-family:Inter;">
+        <div class="filling"></div>
+        <div class="survey_display_inner">
+            <a class='back-btn' href="library.html"><i id='back' class="fa-duotone fa-solid fa-share"></i></a>
+            <div class="survey_display_inner_title_holder">
+                <h1 id="surveyTitle" class="my-4">Survey Title</h1>
+                <p id="surveyAuthorcreate"></p>
+            </div>
+            <form id="surveyForm">
+            </form>
+        </div>
+    </div>
+    <footer class="py-3 text-center text-white main_footer">
+        <p>&copy; 2024 bsl.alpha. All rights reserved.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/avsurvey.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Alphabase</title>
+    <link rel="icon" href="images/logo/alphabase-icon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button-icons.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-12">
+        <nav class="navbar navbar-light navbar-expand-md navbar_main" style="position: fixed;width: 100%;font-family:Inter;z-index:1000;max-height: 6rem;">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><image height='30' src='images/alphabase-black-wide_small.png'></image></span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link navbar_link_items" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link navbar_link_items" href="library.html">Library</a></li>
+            </ul><a href="profile.html"><button class="btn btn-primary navbar_priority literally_active" type="button"><img src="images/alya.png" width="40" class="pfp"></button></a>
+        </div>
+        </div> 
+        </div>
+        </nav>
+    </div>
+
+    <div class="nav-solution"></div>
+
+    <div class="content">
+        <main class="modal-body border-0 p-4" style="margin-top:1rem;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <section id="profile" class="profile-section">
+                            <div class="profile-card">
+                                <div class="profile-img-container">
+                                    <img src="images/profile-picture.png" alt="Profile Picture" class="profile-img">
+                                </div>
+                                <div class="profile-info">
+                                    <h2>Alphabase User</h2>
+                                    <p class="profile-description">Survey Enthusiast | Data Analyst</p>
+                                    <div class="profile-stats">
+                                        <span><strong>5</strong> Surveys Created</span>
+                                        <span><strong>12</strong> Surveys Taken</span>
+                                    </div>
+                                </div>
+                                <div class="profile-details">
+                                    <p> <i class="fa-solid fa-calendar"></i>19th October 2003</p>
+                                    <p> <i class="fa-solid fa-envelope"></i>amazguy.89@mail.com</p>
+                                    <p> <i class="fa-solid fa-globe"></i>Indonesia</p>  
+                                </div>
+                                <a href="index.html" class="logoutbtn">Log Out</a>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="giant-box">
+                            <!-- Survey Section -->
+                            <div class="section-box show-list-group" id="surveys">
+                                <h2 style="font-size:24px;">Your Surveys <span class="arrow">&#9662;</span></h2>
+                                <a href="form_builder.html" id='create-survey' class=" btn btn-primary mb-3 ">Create New Survey</a>
+                                <ul class="list-group">
+                                    <li class="list-group-item" id="your_survey_1"><strong>Survei: Kepuasan Layanan Publik</strong><br> <small>Dibuat: 15 Agustus 2024</small></li>
+                                    <li class="list-group-item" id="your_survey_2"><strong>Survei: Tingkat Kebahagiaan Siswa</strong><br> <small>Dibuat: 2 September 2024</small></li>
+                                </ul>
+                            </div>
+
+                            <!-- Notice Section -->
+                            <div class="section-box" id="notice">
+                                <h2 style="font-size:24px;">Notice <span class="arrow">&#9662;</span></h2>
+                                <ul class="list-group">
+                                    <li id='warning' class="list-group-item notification warning" >Your response to the survey <strong>'Public Service Satisfaction'</strong> is invalid! Your response will not be counted.</li>
+                                    <li id='update' class="list-group-item notification update" >Your survey <strong>'Student Happiness Level'</strong> received 54 responses in the last 3 days.</li>
+                                    <li id='invite' class="list-group-item notification invite">You have been invited to complete the survey <strong>'Indonesian Culinary Preferences'</strong>.</li>
+                                </ul>
+                            </div>
+
+                            <!-- History Section -->
+                            <div class="section-box" id="history">
+                                <h2 style="font-size:24px;">History <span class="arrow">&#9662;</span></h2>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Survey searched: <strong>'Restaurant Customer Satisfaction'</strong> - September 2, 2024</li>
+                                    <li class="list-group-item">Survey searched: <strong>'Nature Tourism Preferences'</strong> - August 28, 2024</li>
+                                    <li class="list-group-item">Survey searched: <strong>'Social Media Usage Behavior'</strong> - August 25, 2024</li>
+                                </ul>
+                            </div>
+
+                            <!-- Lesson Section -->
+                            <div class="section-box" id="lesson">
+                                <h2 style="font-size:24px;">Lesson <span class="arrow">&#9662;</span></h2>
+                                <ol class="list-group">
+                                    <li class="list-group-item" data-key="0">1. Determine Survey Topic</li>
+                                    <li class="list-group-item" data-key="1">2. Create Clear Questions</li>
+                                    <li class="list-group-item" data-key="2">3. Choose Question Type</li>
+                                    <li class="list-group-item" data-key="3">4. Test the Survey</li>
+                                    <li class="list-group-item" data-key="4">5. Share the Survey</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sectionBoxes = document.querySelectorAll('.section-box');
+
+            sectionBoxes.forEach(box => {
+                const arrow = box.querySelector('.arrow');
+                box.addEventListener('click', () => {
+                    box.classList.toggle('show-list-group');
+                    arrow.classList.toggle('rotate');
+                    
+                    sectionBoxes.forEach(otherBox => {
+                        if (otherBox !== box) {
+                            otherBox.classList.remove('show-list-group');
+                            otherBox.querySelector('.arrow').classList.remove('rotate');
+                        }
+                    });
+                });
+            });
+
+            const your_survey_1 = document.getElementById("your_survey_1");
+            const your_survey_2 = document.getElementById("your_survey_2");
+            const your_survey_3 = document.getElementById("your_survey_3");
+
+            const surveyItems = document.querySelectorAll('#surveys .list-group-item');
+            const item_category = 'review_my_survey';
+
+            surveyItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const surveyId = item.id;
+
+                    localStorage.setItem('selectedSurvey', surveyId);
+                    localStorage.setItem('review_my_survey', item_category);
+
+                    window.location.href = 'multipurpose.html';
+                })
+            })
+
+            const LessonThings = [{
+                name: "Tentukan Topik Survei",
+                content: `<p>
+                    Langkah pertama dan paling penting dalam membuat survei adalah menentukan topiknya. Keberhasilan survei Anda sangat bergantung pada seberapa baik topik tersebut didefinisikan karena ini menjadi dasar untuk seluruh penelitian Anda. Topik yang jelas akan membimbing jenis pertanyaan yang Anda ajukan dan jenis data yang Anda kumpulkan, memastikan bahwa survei tersebut fokus dan relevan.
+                </p>
+                <p>
+                    Untuk memilih topik yang baik, mulailah dengan mengidentifikasi masalah utama atau isu yang ingin Anda selesaikan. Tanyakan pada diri sendiri, "Apa yang perlu saya ketahui dari audiens saya?" atau "Jenis umpan balik apa yang dapat membantu meningkatkan produk, layanan, atau pengalaman?" Dengan mempersempit fokus, Anda akan menghindari membuat survei yang terlalu luas yang dapat membingungkan responden atau menghasilkan data yang tidak berguna.
+                </p>
+                <p>
+                    Selain itu, pertimbangkan audiens Anda saat menentukan topik. Pastikan topik tersebut relevan dengan mereka dan sejalan dengan minat, kekhawatiran, atau pengalaman mereka. Topik yang dipilih dengan baik tidak hanya akan menarik perhatian responden tetapi juga meningkatkan kualitas dan jumlah tanggapan yang Anda terima.
+                </p>`,
+            },
+            {
+                name: "Buatlah Pertanyaan yang Jelas",
+                content: `<p>
+                Setelah menentukan topik, langkah berikutnya adalah membuat pertanyaan yang jelas dan ringkas. Tujuannya adalah mengumpulkan data yang berguna, jadi cara pertanyaan dirancang sangat mempengaruhi keefektifan survei Anda. Pertanyaan yang ditulis dengan buruk atau tidak jelas bisa membingungkan responden dan menghasilkan jawaban yang tidak akurat atau tidak relevan.
+            </p>
+            <p>
+                Untuk memastikan kejelasan, gunakan bahasa yang sederhana dan hindari istilah teknis. Responden harus bisa memahami apa yang ditanyakan tanpa memerlukan penjelasan lebih lanjut. Jika sebuah pertanyaan membutuhkan terlalu banyak penjelasan, mungkin pertanyaan itu terlalu rumit dan perlu dirumuskan ulang.
+            </p>
+            <p>
+                Penting juga untuk menghindari pertanyaan yang memihak atau menggiring, karena dapat mempengaruhi hasil. Sebagai contoh, alih-alih bertanya, “Seberapa puas Anda dengan layanan pelanggan kami yang luar biasa?” cukup tanyakan, “Seberapa puas Anda dengan layanan pelanggan kami?” Pendekatan yang netral ini memastikan bahwa data yang dikumpulkan lebih objektif dan dapat dipercaya.
+            </p>`,
+            },
+            {
+                name: "Jenis Pertanyaan",
+                content: `<p>
+                Berbagai jenis pertanyaan dapat memberikan wawasan yang berbeda, jadi memilih jenis pertanyaan yang tepat sangat penting untuk mendapatkan jawaban yang bermakna. Jenis yang paling umum termasuk pilihan ganda, jawaban terbuka, skala Likert, dan pertanyaan ya/tidak. Masing-masing memiliki kelebihan dan kekurangan, tergantung pada jenis data yang Anda butuhkan.
+            </p>
+            <p>
+                Pertanyaan pilihan ganda sangat bagus untuk mengumpulkan data kuantitatif dan memberikan responden pilihan jawaban yang telah ditentukan. Ini sangat membantu jika Anda ingin membandingkan tanggapan dari kelompok besar. Di sisi lain, pertanyaan terbuka memberi kebebasan kepada responden untuk mengekspresikan pemikiran mereka dengan kata-kata mereka sendiri, yang dapat memberikan data kualitatif yang lebih rinci.
+            </p>
+            <p>
+                Jika Anda ingin mengukur pendapat atau sikap, skala Likert—di mana responden menilai sesuatu dalam skala (misalnya, 1-5)—dapat sangat berguna. Pertanyaan ya/tidak, meskipun sederhana, paling baik digunakan untuk mengumpulkan informasi biner yang cepat. Memilih kombinasi yang tepat dari jenis-jenis pertanyaan ini akan memastikan Anda mendapatkan wawasan paling berharga dari survei Anda.
+            </p>`,
+            },
+            {
+                name: "Uji Survei",
+                content: `<p>
+                Menguji survei adalah langkah penting yang sering diabaikan. Sebelum mendistribusikan survei Anda ke audiens yang lebih luas, sangat penting untuk mengujinya pada kelompok kecil yang mewakili. Proses ini membantu Anda mengidentifikasi masalah dengan kejelasan pertanyaan, logika, atau kesalahan teknis yang dapat mempengaruhi kualitas data yang dikumpulkan.
+            </p>
+            <p>
+                Mintalah kelompok uji untuk memberikan umpan balik tentang seberapa mudah atau sulit mereka memahami dan menjawab pertanyaan. Apakah ada pertanyaan yang mereka anggap membingungkan? Apakah alur survei masuk akal? Anda mungkin juga ingin menguji survei pada perangkat yang berbeda untuk memastikan survei berfungsi dengan baik di desktop maupun perangkat seluler.
+            </p>
+            <p>
+                Berdasarkan umpan balik tersebut, lakukan penyesuaian yang diperlukan sebelum meluncurkan survei. Langkah tambahan ini mungkin memerlukan waktu lebih lama, tetapi akan menyelamatkan Anda dari mengumpulkan data yang tidak dapat digunakan dan membantu Anda menyempurnakan survei agar lebih efektif.
+            </p>`,
+            },
+            {
+                name: "Penyebaran Survei",
+                content: `<p>
+                Setelah survei Anda final, saatnya untuk mendistribusikannya ke audiens target Anda. Membagikan survei dengan cara yang efektif sangat penting untuk mengumpulkan jumlah tanggapan yang signifikan. Pertimbangkan platform atau saluran mana yang paling sering digunakan oleh audiens Anda—apakah itu media sosial, email, atau bahkan melalui SMS.
+            </p>
+            <p>
+                Anda juga mungkin ingin mendorong partisipasi dengan menjelaskan mengapa survei tersebut penting. Biarkan responden tahu bagaimana masukan mereka akan digunakan dan apa manfaat yang bisa mereka harapkan sebagai hasilnya. Jika sesuai, menawarkan insentif seperti diskon atau layanan gratis dapat meningkatkan jumlah responden.
+            </p>
+            <p>
+                Waktu juga berperan dalam keberhasilan survei. Mengirimkan survei pada waktu yang tepat, atau selama acara yang relevan, dapat meningkatkan partisipasi. Setelah membagikan survei, pastikan untuk memantau tanggapan dan mengirimkan pengingat kepada mereka yang belum menyelesaikan survei, sehingga Anda bisa memaksimalkan jumlah peserta.
+            </p>`,
+            }]
+
+            const lessonItems = document.querySelectorAll('.list-group-item');
+
+        lessonItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+            const lessonKey = event.target.getAttribute('data-key');
+        
+            // Access the correct lesson object from LessonThings using the lessonKey
+            const selectedLesson = LessonThings[lessonKey];
+        
+            if (selectedLesson) {
+                localStorage.setItem(`lesson_${lessonKey}_name`, selectedLesson.name);
+                localStorage.setItem(`lesson_${lessonKey}_details`, selectedLesson.content);
+                window.location.href = `multipurpose.html?lessonKey=${lessonKey}`;
+            }
+        });
+    });
+});
+    </script>
+
+<footer class="py-3 text-center text-white main_footer">
+    <p>&copy; 2024 bsl.alpha. All rights reserved.</p>
+</footer>
+            
+</body>
+</html>

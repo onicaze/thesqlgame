@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Alphabase</title>
+    <link rel="icon" href="images/logo/alphabase-icon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="form_builder.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button-icons.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-12">
+        <nav style="position: fixed;width: 100%;font-family:Inter;z-index:1000;max-height: 6rem; margin-right:4.8rem;" class="navbar navbar-light navbar-expand-md navbar_main">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><image height='30' src='images/alphabase-black-wide_small.png'></image></span></a><button data-bs-toggle="collapse"  class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link navbar_link_items" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link navbar_link_items navbar_link_items_active" href="library.html">Library</a></li>
+            </ul>
+            <a href="profile.html"><button class="btn btn-primary navbar_priority" type="button"><img src="images/alya.png" width="40" class="pfp"></button></a>
+        </div>
+        </div> 
+        </div>
+        </nav>
+    </div>
+    <div class="maincontainer container-fluid">
+        <div class="row form-building">
+            <div class="form-builder">
+                <div class="form-builder-in">
+                    <h1 style="margin-bottom: 1rem;">Form Builder</h1>
+                    <input type="text" style="margin-bottom:0.4rem;" id="surveyName" class="question-title" placeholder="Enter survey name" oninput="updateSurveyName()">
+                    <div class="additional-questions">
+                        <label><input type="checkbox" id="askAge" onchange="toggleAdditionalQuestions()"> Ask for user's age</label>
+                        <label><input type="checkbox" id="askRegion" onchange="toggleAdditionalQuestions()"> Ask for user's region/location</label>
+                        <label><input type="checkbox" id="askName" onchange="toggleAdditionalQuestions()"> Ask for user's name</label>
+                    </div>
+                    <div id="questionsContainer"></div>      
+                </div>
+            </div>
+
+
+            <div class="fixed-box" id="fixedBox">
+                <ul style="list-style:none;padding:0;margin:0;">
+                    <li><button onclick="addQuestion()"><i class="fa-regular fa-square-plus"></i></button></li>
+                    <li><button id="previewFormButton" onclick="showFormPreview()"><i class="fa-regular fa-eye"></i></button></li>
+                    <li><button onclick="resetForm()"><i class="fa-solid fa-arrow-rotate-right"></i></button></li>
+                </ul>
+            </div>  
+
+            <div id="formPreviewOverlay" class="overlay">
+                <div class="overlay-content">
+                    <button id="closePreview" class="close-preview-btn">Close</button>
+                    <center><h2 id="formNamePreview" style="margin-bottom: 1.5rem;">Preview Form</h2></center>
+                    <div id="generatedForm"></div>
+                </div>
+            </div>
+
+            <button style='display: none;' id="element1">Click Me 1</button>
+            <button style='display: none;' id="element2">Click Me 2</button>
+            <button style='display: none;' id="element3">Click Me 3</button>
+
+            <template id="questionTemplate">
+                <div class="question-item">
+                    <div class="input-wrapper">
+                        <input type="text" class="question-title" placeholder="Enter your question">
+                        <i class="fa fa-trash trash-icon" onclick="removeQuestion(this)"></i>
+                    </div>
+                    <select class="question-type" onchange="changeQuestionType(this)">
+                        <option value="text">Short Answer</option>
+                        <option value="multipleChoice">Multiple Choice</option>
+                        <option value="checkboxes">Checkboxes</option>
+                        <option value="numbersOnly">Numbers Only</option>
+                        <option value="date">Date</option>
+                    </select>
+                    <div class="question-options"></div>
+                    <button type="button" class="add-option-btn" onclick="addOption(this)" style="display: none;">Add Option</button>
+                    <hr class="separator">
+                </div>
+            </template>
+
+            <template id="optionTemplate">
+                <div class="option-item">
+                    <div class="input-wrapper">
+                        <input type="text" class="option-input" placeholder="Option text">
+                        <i class="fa fa-trash trash-icon" onclick="removeOption(this)"></i>
+                    </div>
+                </div>
+            </template>
+
+            <div id="resetOverlay" class="overlay-reset">
+                <div class="overlay-content-reset">
+                    <p>Are you sure you want to reset the form? This action cannot be undone.</p>
+                    <div class="overlay-buttons-reset">
+                        <button id="confirmReset" class="overlay-btn-reset">Yes</button>
+                        <button id="cancelReset" class="overlay-btn-reset">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/form_builder.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

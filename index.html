@@ -1,61 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The SQL Game</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
-    <script src="js/fullscreen.js" defer></script>
-    <script src='js/disablerightclick.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alphabase</title>
+    <link rel="icon" href="images/logo/alphabase-icon.png" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-With-Button-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body style="background-color:black;text-transform:lowercase">
+
+<body>
     
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="music/index.mp3" type="audio/mpeg">
-    </audio>
+    <div class="row">
+        <div class="col-12">
+        <nav style="position: fixed;width: 100%;font-family:Inter;z-index:1000;max-height: 6rem;" class="navbar navbar-light navbar-expand-md navbar_main">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><image height='30' src='images/alphabase-black-wide_small.png'></image></span></a><button data-bs-toggle="collapse"  class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link navbar_link_items navbar_link_items_active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link navbar_link_items" href="login.html">Library</a></li>
+            </ul>
+            <a href="login.html">
+            <button class="btn btn-primary navbar_priority" type="button" style="padding:0.4rem;font-size:1rem;min-width:5rem;">Sign In</button></a>
+        </div>
+        </div> 
+        </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+    <div class="hero row">
+        <div class="col-md-8 hero-text">
+            <h1 class="hero-title-line1">Ace Your <span class="hero-title-focus">Research.</span></h1>
+            <p class="hero-description">Gabunglah dan temuilah penemuan dan inovasi baru yang belum anda ketahui disini untuk mengembangkan proyek dan penelitian anda.</p>
+            <div class="buttons-container">
+                <a class='priority-button' href="login.html">Start Browsing</a>
+                <a class='secondary-button' href="#target-section">Read More..</a>
+            </div>
+        </div>
+        <div class="col-md-4 hero-image">
+            <img class='hero-images' src="images/library-concept-illustration.png"> 
+            <!-- https://www.freepik.com/free-vector/library-concept-illustration_209078297.htm#fromView=search&page=1&position=36&uuid=d39bc040-8ef6-46c3-887c-ed3ae8934f22 -->
+        </div>
+    </div>
+    <div class="row home-description" id="target-section">
+        <div class="col-md-4 hero-image">
+            <img class='hero-images' src="images/research-paper-concept-illustration.png">
+            <!-- https://www.freepik.com/free-vector/research-paper-concept-illustration_21532511.htm#fromView=search&page=1&position=3&uuid=493e621b-4da2-4ea3-93d4-0e374631b01c -->
+        </div>
+        <div class="col-md-8">
+            <div class="home-description-describe">
+            <h2>Tentang Alphabase</h2>
+            <hr>
+            <h3>Eksplorasi Mendalam</h3>
+            <p>Jelajahi hasil penelitian dan survei-survei terdahulu yang jarang sekali digunakan atau diekspos. Gunakanlah bekal ini untuk mengembangkan inovasi anda.</p>
+            <h3>Ciptakan Surveimu</h3>
+            <p>Temukan jawaban yang Anda butuhkan melalui survei. Dengan Alphabase, Anda dapat dengan cepat membuat survei yang menarik, mengumpulkan tanggapan, dan mengolah data menjadi wawasan yang berharga.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row feature-card-holder">
+        <h1 class="feature-card-holder-title">Features</h1>
+        <div class="col-md-6">
+            <div class="row feature-card-col">
+                <div class="col-md-12">
+                    <div class="feature-card">
+                        <img width='200' class='the-icon-image' src="images/company-employees-use-web-search-find-ideas-doing-business-company.png">
+                        <!-- https://www.freepik.com/free-vector/company-employees-use-web-search-find-ideas-doing-business-company_14245125.htm#fromView=search&page=1&position=0&uuid=0ac29b50-4657-4ee8-93e0-75f361c6b364-->
+                        <h1>Library</h1>
+                        <p>Cari dan telusuri hasil survei terdahulu atau bahkan terbaru ini untuk membantu anda mengembangkan inovasi dan penelitian yang anda ingin ciptakan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row feature-card-col">
+                <div class="col-md-12">
+                    <div class="feature-card" >
+                        <img width='200' class='the-icon-image' src="images/customer-survey-concept-illustration.png">
+                        <!-- https://www.freepik.com/free-vector/customer-survey-concept-illustration_5841880.htm#fromView=search&page=1&position=5&uuid=c7556140-7102-441b-9345-918f1c4cf7ef-->
+                        <h1>Create Your Own Survey</h1>
+                        <p>Buatlah surveimu sendiri dan sebarkanlah dengan mudah untuk membantu riset dan pengumpulan data melalui Alphabase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 feature-card-image">
+            <img src="images/displayimage.png">
+        </div>
+    </div>
+    <div class="row review-block">
+        <div class="col-md-12">
+            <div class="row review-title-block">
+                <div class="col-md-12">
+                    <h1>Who likes Alphabase?</h1>
+                </div>
+            </div>
+            <div class="row review-block-inside-a-block">
+                <div class="col-md-4 review-block-lists">
+                    <div class="review-lists">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class='review-profile-image' src="images/team/paamos.jpg" width="200">
+                                <!-- Diambil oleh kita sendiri -->
+                            </div>
+                            <div class="col-md-8 review-profile-image-name">
+                                <h1>Amos Nugroho</h1>
+                                <h3>Manager</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Tau ga sih, karena Alphabase aku jadi gampaaang banget buat belajar tentang produk dan pasarku! Aku biasanya buat survey secara langsung dengan orang satu per-satu, tapi sekarang aku bisa sebarin surveyku secara digital dan menarik lebih banyak jawaban!
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 review-block-lists">
+                    <div class="review-lists">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class='review-profile-image' src="images/joanna.png" width="200">
+                                <!-- https://www.freepik.com/free-photo/young-student-woman-wearing-denim-jacket-eyeglasses-holding-colorful-folders-showing-thumb-up-pink_13136120.htm#fromView=search&page=1&position=22&uuid=9195d613-2f77-456d-be11-3e9195898c85-->
+                            </div>
+                            <div class="col-md-8 review-profile-image-name">
+                                <h1>Joanna Christabella</h1>
+                                <h3>College Student</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Saya sangat kesulitan saat saya ingin melakukan riset mengenai suatu hal. Tapi, setelah seseorang merekomendasikan saya Alphabase, semua riset terasa sangat mudah dicapai! Mencari topik dan informasi menjadi sangat praktis, dan saya jadi suka melakukan riset!</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 review-block-lists">
+                    <div class="review-lists">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class='review-profile-image' src="images/freddynaya.png">
+                                <!-- https://www.freepik.com/free-photo/nature-protection-concept-male-scientist-carefully-studies-his-data_7816956.htm#fromView=search&page=1&position=8&uuid=5efa7b50-1893-4c9d-a375-356b9ebf4374-->
+                            </div>
+                            <div class="col-md-8 review-profile-image-name">
+                                <h1>Freddy Anri</h1>
+                                <h3>Researcher</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Menurut pengalamanku, sangat sulit untuk membuat riset opini publik. Ditambah lagi orang-orang biasanya menolak kiriman surveyku. Dengan hadirnya Alphabase, aku merasa sangat dimudahkan dalam membuat riset. Aku bisa mencari hasil, bahkan aku bisa membuat surveyku sendiri. Sangat keren!</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row our-team-row">
+        <div class="col-md-12">
+            <strong><h1 style="font-weight:bold;">Our Team</h1></strong>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4" style="padding:2rem;">
 
-    <script>
-        document.getElementById('backgroundMusic').volume = 0.1; // Volume range is 0.0 to 1.0
-    </script>
-
-    <div class="loading-screen">
-        <div id="typing-text" class="typing-text"></div>
+                    <!-- Image disini semua diambil oleh kita sendiri-->
+                    <div class="our-team-profile">
+                        <img width="200" src="images/team/kenneth.jpg">
+                        <h2 style="font-weight:bold;font-size:1rem">Kenneth Aurelian N. U. W.</h2>
+                        <ul>
+                            <li>Concept Designer and Feature Programmer</li>
+                            <li><i class="fab fa-instagram"></i> ken.th_aur</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4"  style="padding:2rem;">
+                    <div class="our-team-profile">
+                        <img width="200" src="images/team/peter.jpg">
+                        <h2 style="font-weight:bold;font-size:1rem">Peter Hansel Sanjaya</h2>
+                        <ul>
+                            <li>User Interface & User Experience Designer</li>
+                            <li><i class="fab fa-instagram"></i> peterhnsl</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4"  style="padding:2rem;">
+                    <div class="our-team-profile">
+                        <img width="200" src="images/team/phoenix.jpg">
+                        <h2 style="font-weight:bold;font-size:1rem">Phoenix Putra Iskandar</h2>
+                        <ul>
+                            <li>System Inventor and Feature Programmer</li>
+                            <li><i class="fab fa-instagram"></i> iskandarphoe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row invitation">
+        <div class="col-md-12 invitation-col">
+            <div class="invitation-inner-col">
+                <h1>Begin your research</h1>
+                <h1>with <a href='login.html' style="text-decoration:none;"><span class='invitation-focus'>Alphabase.</span></a></h1>
+            </div>
+        </div>
     </div>
 
-    <div class="container">
-        <h1 class="title">* The SQL Game</h1> 
-
-        <button onclick="startLoading()" class="play-button">> tutorial</button>
-        <script>
-            function startLoading() {
-                window.location.href = "loading2.html";a
-            }
-            </script>
-        <br>
-        <button onclick="startLoading1()" class="play-button">> play</button>
-        <script>
-            function startLoading1() {
-                window.location.href = "loading4.html";
-            }
-            </script>
-        <br>
-        <button onclick="startLoading3()" class="play-button">> credits</button>
-        <script>
-            function startLoading3() {
-                window.location.href = "credit.html";
-            }
-            </script>
-
-        <div class="eyes" onclick="startLoading2()"></div>
-        <script>
-            function startLoading2() {
-                window.location.href = "loading1.html";
-            }
-            </script>
-   
-        
+</div>
+    <footer class="py-3 text-center text-white main_footer">
+        <p>&copy; 2024 bsl.alpha. All rights reserved.</p>
+    </footer>
+    
+    <script src="index.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
 </body>
+
 </html>
